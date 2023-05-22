@@ -1,8 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Swal from 'sweetalert2';
 import { useEffect, useState } from 'react';
 import ProjetService from '../services/projetService';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Cours() {
 
@@ -12,6 +15,7 @@ function Cours() {
 
     const projetService = new ProjetService(); 
     const imageUrl = 'http://localhost:8000/images/';
+    const navigate = useNavigate();
 
     useEffect(() => {
         projetService.getCours()
@@ -25,6 +29,7 @@ function Cours() {
             title: "Oops, Something went wrong!",
             showConfirmButton: true,
             });
+            navigate('/');
         });
     }, [])
 
@@ -61,7 +66,12 @@ function Cours() {
                     <Card.Body>
                         <Card.Title>{item.nom}</Card.Title>
                         <Card.Text>{item.description}</Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Link
+                            variant="primary"
+                            className="btn btn-secondary mx-1"
+                            to={`/chapitre/cours/${item.id}`}>
+                            Go somewhere
+                        </Link>
                     </Card.Body>
                     </Card>
                 </div>
@@ -90,6 +100,7 @@ function Cours() {
                     Suivant
                 </button>
             </div>
+            
         </div>
     );
 }

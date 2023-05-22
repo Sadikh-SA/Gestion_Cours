@@ -77,7 +77,7 @@ class ChapitreController extends AbstractController
     }
 
 
-    #[Route('/chapitre/cours/{id}', name: 'app_chapitre_cours')]
+    #[Route('/chapitre/cours/{id}', name: 'app_chapitre_cours.24', methods:['GET'])]
     #[IsGranted('ROLE_ADMIN')]
     #[IsGranted('ROLE_USER')]
     public function index_cours(Cours $cours, ChapitreRepository $chapitreRepository): Response
