@@ -41,7 +41,7 @@ function LoginRegister() {
         "password": motPasse
       }
       let reponse = authService.login(FormData);
-      if (reponse !=null) {
+      if (reponse) {
         return history('/cours');
       }
   }
