@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.svg-map {
+
+  #ara {
+    fill: teal;
+  }
+  #bfc {
+    fill: orange
+  }
+  #ges {
+    fill: red;
+  }
+}

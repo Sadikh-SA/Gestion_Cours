@@ -1,7 +1,5 @@
-import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Swal from 'sweetalert2';
 import { useEffect, useState } from 'react';
 import ProjetService from '../services/projetService';
